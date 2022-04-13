@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>짝수일까, 홀수일까</title>
+</head>
+<body>
+	<h2>짝수일까, 홀수일까</h2>
+
+	<script>
+		var n = prompt("숫자를 입력하세요.");
+		function kind(k) {
+			document.write(`${n}는 ${k}입니다.`);
+		}
+
+		if (n != null) {
+			if (n % 2 == 1) {
+				kind("홀수");
+			} else {
+				kind("짝수");
+			};
+		};
+	</script>
+</body>
+</html>
