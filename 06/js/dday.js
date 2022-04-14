@@ -15,3 +15,41 @@ document.querySelector('#accent').innerHTML = passedDay + "일";
 
 
 // ---------- 100일
+
+var future = toFirst + 100 * (1000 * 60 * 60 * 24); // 처음 만난 날에 100일을 더함
+var someday = new Date(future); // future 값을 사용해 Date 객체의 인스턴스를 만듬
+
+var year = someday.getFullYear(); // '연도'를 가져와 year 변수에 저장
+var month = someday.getMonth() + 1; // '월'을 가져와 month 변수에 저장
+var date = someday.getDate(); // '일'을 가져와 date 변수에 저장
+
+document.querySelector('#date100').innerHTML = `${year}년 ${month}월 ${date}일`;
+
+
+// ---------- 200일
+
+future = toFirst + 200 * (1000 * 60 * 60 * 24);
+someday = new Date(future);
+
+year = someday.getFullYear();
+month = someday.getMonth() + 1;
+date = someday.getDate();
+
+document.querySelector('#date200').innerHTML = `${year}년 ${month}월 ${date}일`;
+
+
+// ---------- calcDate() 함수 선언하기
+
+function calcDate(days) {
+    var future = toFirst + days * (1000 * 60 * 60 * 24); // 처음 만난 날에 100일을 더함
+    var someday = new Date(future); // future 값을 사용해 Date 객체의 인스턴스를 만듬
+    
+    var year = someday.getFullYear(); // '연도'를 가져와 year 변수에 저장
+    var month = someday.getMonth() + 1; // '월'을 가져와 month 변수에 저장
+    var date = someday.getDate(); // '일'을 가져와 date 변수에 저장
+    
+    document.querySelector('#date' + days).innerHTML = `${year}년 ${month}월 ${date}일`;
+}
+
+calcDate(365);
+calcDate(500);
